@@ -1,0 +1,240 @@
+/*
+Name: Calculator App
+URL: https://richardmiddleton.me/calculator
+Author: Richard Middleton
+Author URL: https://richardmiddleton.me
+Description: Create a Javascript Calculator for FCC
+Version: 1.0
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline; }
+  
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block; }
+  
+  body {
+    line-height: 1; }
+  
+  ol, ul {
+    list-style: none; }
+  
+  blockquote, q {
+    quotes: none; }
+  
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+  
+  * {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  
+  a {
+    text-decoration: none; }
+  
+  input, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  
+  html {
+    font-size: 14px; }
+  
+  body {
+    font-family: 'Open Sans';
+    line-height: 1.2; }
+  
+  h1, h2, h3, h4 {
+    font-weight: 200;
+    color: #262626; }
+  
+  h1 {
+    font-size: 1.5em; }
+  
+  h1 span {
+    font-weight: 700; }
+  
+  h2 {
+    font-size: 4.8em;
+    color: #fbfbfb; }
+  
+  h3 {
+    font-size: 2.3em; }
+  
+  .smaller {
+    font-size: 1.8em; }
+  
+  p {
+    color: #262626; }
+  
+  a {
+    text-decoration: none;
+    color: #323232;
+    font-size: 1.1rem;
+    font-weight: 600; }
+  
+  strong {
+    font-weight: 700; }
+  
+  em {
+    font-style: italic; }
+  
+  i {
+    color: #fbfbfb;
+    padding: 0 1px; }
+  
+  .fa-heart {
+    font-size: 12px;
+    color: #fc2d23; }
+  
+  .fa-coffee {
+    font-size: 12px;
+    color: #622F1C; }
+  
+  header a {
+    font-size: 1.8rem;
+    color: #fbfbfb;
+    font-weight: 300; }
+    header a i, header a span {
+      color: #323232; }
+  
+  .built {
+    color: white;
+    font-size: 0.9em;
+    padding: 4px;
+    font-weight: 300; }
+    .built strong {
+      font-weight: 400; }
+  
+  .built a, .built p {
+    font-size: 0.8rem;
+    transition: all 0.6s ease; }
+  
+  .built a:hover {
+    text-decoration: underline; }
+  
+  .shadow {
+    box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.3), 0 6px 16px 0 rgba(99, 99, 99, 0.3); }
+  
+  .thin {
+    font-weight: 300; }
+  
+  .center {
+    text-align: center; }
+  
+  .muted {
+    color: #515151; }
+  
+  .hidden {
+    display: none; }
+  
+  .visible {
+    display: block; }
+  
+  body {
+    position: relative;
+    margin: 0;
+    background-color: #f0f0f0; }
+  
+  section {
+    margin: 120px auto 0;
+    width: 372px; }
+  
+  .status-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #181818; }
+  
+  #status-bar-clock, #status-bar-logo, #status-bar-right {
+    padding: 6px;
+    width: 120px;
+    text-align: center; }
+    #status-bar-clock p, #status-bar-logo p, #status-bar-right p {
+      color: #fbfbfb;
+      font-weight: 200; }
+    #status-bar-clock span, #status-bar-logo span, #status-bar-right span {
+      font-weight: 600; }
+  
+  #status-bar-logo p, #status-bar-right p {
+    padding-top: 1px;
+    font-size: 12px;
+    text-align: left; }
+  
+  #status-bar-right p {
+    text-align: right; }
+  
+  #display {
+    height: 120px;
+    width: 100%;
+    text-align: right;
+    background-color: #181818;
+    overflow: hidden; }
+  
+  .larger {
+    padding: 38px 8px 0; }
+  
+  .smallest {
+    font-size: 0.7em;
+    overflow-wrap: break-word; }
+  
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center; }
+  
+  .key {
+    height: 93px;
+    width: 93px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    border: 0.1px solid #5a5a5a; }
+    .key:hover {
+      background-color: gainsboro; }
+    .key:active {
+      background-color: #bbbbbb; }
+  
+  .k-0 {
+    min-width: 186px;
+    text-align: left;
+    padding-left: 40px; }
+  
+  .orange {
+    background-color: #f27b21; }
+    .orange h3 {
+      color: #fbfbfb; }
+    .orange:hover {
+      background-color: #dd670d; }
+    .orange:active {
+      background-color: #bc570b; }
+  
+  .grey {
+    background-color: #c1c2c3; }
+    .grey:hover {
+      background-color: #a7a9aa; }
+    .grey:active {
+      background-color: #929496; }
+  
+  .footer {
+    background: #f27b21;
+    border: 0.1px solid #5a5a5a;
+    border-top: none; }
+  
+  .built {
+    display: table-cell;
+    vertical-align: middle; }
+  

@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <main>
+
+    <section>
+        <div class="status-bar">
+
+            <div id="status-bar-logo">
+                <p><i class="fa fa-free-code-camp" aria-hidden="true"> </i>
+                
+                <span>JS</span>Calculator
+            </div>
+
+            <div id="status-bar-clock"></div>
+
+            <div id="status-bar-right">
+                <p>100% <i class="fa fa-battery-full" aria-hidden="true"></i></p>
+            </div>
+
+        </div>
+
+        <div id="display" class="larger"></div>
+
+        <div class="row row-1">
+
+            <a href="#" onclick="event.preventDefault(); reset();"><div class="key grey cancel"><h3 class="smaller">AC</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); removeOne();"><div class="key grey percentage"><h3 class="smaller">DEL</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); negative();"><div class="key grey negative"><h3>+/-</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('/');"><div class="key orange divide"><h3>÷</h3></div></a>
+
+        </div>
+
+        <div class="row row-2">
+
+            <a href="#" onclick="event.preventDefault(); key('7');"><div class="key k-7"><h3>7</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('8');"><div class="key k-8"><h3>8</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('9');"><div class="key k-9"><h3>9</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('*');"><div class="key orange multiply"><h3>×</h3></div></a>
+
+        </div>
+
+        <div class="row row-3">
+
+            <a href="#" onclick="event.preventDefault(); key('4');"><div class="key k-4"><h3>4</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('5');"><div class="key k-5"><h3>5</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('6');"><div class="key k-6"><h3>6</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('-');"><div class="key orange minus"><h3>-</h3></div></a>
+
+        </div>
+
+        <div class="row row-4">
+
+            <a href="#" onclick="event.preventDefault(); key('1');"><div class="key k-1"><h3>1</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('2');"><div class="key k-2"><h3>2</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('3');"><div class="key k-3"><h3>3</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('+');">  <div class="key orange plus"><h3>+</h3></div></a>
+
+        </div>
+
+        <div class="row row-5">
+
+            <a href="#" onclick="event.preventDefault(); key('0');"><div class="key k-0"><h3>0</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); key('.');"><div class="key decimal"><h3>.</h3></div></a>
+
+            <a href="#" onclick="event.preventDefault(); math();"><div class="key orange equals"><h3>=</h3></div></a>
+
+        </div>
+
+        <div class="row footer">
+            <p class="built">Built with <i class="fa fa-heart" aria-hidden="true"></i> & <i class="fa fa-coffee" aria-hidden="true"></i>                    by <a href="http://www.richardmiddleton.me"><strong>RICHARD MIDDLETON</strong></a></p>
+        </div>
+
+
+    </section>
+
+</main>
+</ion-content>
